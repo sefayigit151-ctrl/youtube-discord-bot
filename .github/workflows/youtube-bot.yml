@@ -1,15 +1,15 @@
 name: YouTube Discord Bot
 
 on:
-workflow_dispatch:
-schedule:
-- cron: '*/5 * * * *'
+  workflow_dispatch:
+  schedule:
+       - cron: '*/5 * * * *'
 
 jobs:
-run-bot:
-runs-on: ubuntu-latest
-
-steps:
+  run-bot:
+    runs-on: ubuntu-latest
+ 
+ steps:
   - uses: actions/checkout@v4
 
   - uses: actions/setup-python@v5
