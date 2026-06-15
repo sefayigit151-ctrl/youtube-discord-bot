@@ -2,7 +2,7 @@ name: YouTube Discord Bot
 
 on:
 schedule:
-- cron: '*/5 * * * *'
+- cron: "*/5 * * * *"
 workflow_dispatch:
 
 jobs:
@@ -10,18 +10,19 @@ run-bot:
 runs-on: ubuntu-latest
 
 steps:
-  - uses: actions/checkout@v4
+  - name: Checkout
+    uses: actions/checkout@v4
 
-  - name: Python Kur
+  - name: Setup Python
     uses: actions/setup-python@v5
     with:
-      python-version: '3.12'
+      python-version: "3.12"
 
-  - name: Paketleri Kur
-    run: |
-      pip install feedparser requests
+  - name: Install Packages
+    run: pip install feedparser requests
 
-  - name: Botu Çalıştır
+  - name: Run Bot
     env:
       WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
     run: python youtube_dc.py
+
