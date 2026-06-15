@@ -25,4 +25,3 @@ steps:
     env:
       WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
     run: python youtube_dc.py
-
