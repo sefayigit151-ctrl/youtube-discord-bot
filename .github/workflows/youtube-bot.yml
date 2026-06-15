@@ -9,6 +9,7 @@ jobs:
 run-bot:
 runs-on: ubuntu-latest
 
+
 steps:
   - uses: actions/checkout@v4
 
@@ -17,11 +18,10 @@ steps:
       python-version: '3.12'
 
   - name: Install dependencies
-    run: |
-      pip install feedparser requests
+    run: pip install feedparser requests
 
   - name: Run bot
     env:
       WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
-    run: |
-      python youtube_dc.py
+    run: python youtube_dc.py
+
